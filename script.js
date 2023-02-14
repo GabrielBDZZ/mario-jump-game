@@ -43,7 +43,6 @@ function startGame() {
 
 if (marioPosition >= pipePosition && marioPosition < pipePosition + pipe.offsetWidth) {
     scoreValue++;
-    console.log(scoreValue);
 }
 
 }, 10)

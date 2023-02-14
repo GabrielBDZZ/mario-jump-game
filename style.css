@@ -14,10 +14,14 @@
     position: fixed;
     border-radius: 20px;
     border: solid 10px white;
-    top: 150px;
-    left: 400px;
-    right: 400px;
-    bottom: 150px;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    margin-left: -250px;
+    margin-right: -250px;
+    margin-top: -150px;
+    margin-bottom: -150px;
     width: 500px;
     height: 300px;
 }
