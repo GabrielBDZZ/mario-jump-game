@@ -3,6 +3,7 @@ const pipe = document.querySelector('.pipe');
 const gameOver = document.querySelector('.modal')
 const score = document.querySelector('.score');
 const restartButton = document.querySelector('.restart');
+const currentScore = document.querySelector('.currentScore');
 let scoreValue;
 
 const jump = () => {
@@ -44,6 +45,8 @@ function startGame() {
 if (marioPosition >= pipePosition && marioPosition < pipePosition + pipe.offsetWidth) {
     scoreValue++;
 }
+
+currentScore.textContent = `Pontuação: ${scoreValue}`
 
 }, 10)
 }

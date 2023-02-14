@@ -37,6 +37,11 @@
     margin-top: 50px;
 }
 
+.currentScore {
+    font-size: 30px;
+    margin: 5px 10px;
+}
+
 .restart {
     font-size: 30px;
     border-radius: 10px;
