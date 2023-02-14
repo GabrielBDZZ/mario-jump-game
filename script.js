@@ -1,5 +1,9 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const gameOver = document.querySelector('.modal')
+const score = document.querySelector('.score');
+const restartButton = document.querySelector('.restart');
+let scoreValue;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -8,8 +12,6 @@ const jump = () => {
         mario.classList.remove('jump');
     }, 500)
 }
-
-let scoreValue;
 
 function startGame() {
     document.addEventListener('keydown', jump);
@@ -33,32 +35,27 @@ function startGame() {
         clearInterval(loop);
 
     if (mario.src = './images/game-over.webp') {
-        const gameOver = document.querySelector('.modal')
         gameOver.style.display = 'flex';
-
-        const score = document.querySelector('.score');
         score.textContent = `Sua pontuação foi: ${scoreValue}`
-        
-        const restartButton = document.querySelector('.restart');
-
-                restartButton.addEventListener('click', () => {
-                    score.textContent = '';
-                    gameOver.style.display = 'none';
-                    mario.src="./images/mario.gif";
-                    mario.removeAttribute('style');
-                    pipe.removeAttribute('style');
-                    startGame();
-                    
-                })
     }
-    } 
-    
+} 
 
-    if (marioPosition >= pipePosition) {
-        scoreValue++;
 
-        console.log(scoreValue);
-    }
+if (marioPosition >= pipePosition && marioPosition < pipePosition + pipe.offsetWidth) {
+    scoreValue++;
+    console.log(scoreValue);
+}
+
 }, 10)
 }
+
+restartButton.addEventListener('click', () => {
+    score.textContent = '';
+    gameOver.style.display = 'none';
+    mario.src="./images/mario.gif";
+    mario.removeAttribute('style');
+    pipe.removeAttribute('style');
+    startGame();
+    })
+
 startGame();

@@ -18,6 +18,8 @@
     left: 400px;
     right: 400px;
     bottom: 150px;
+    width: 500px;
+    height: 300px;
 }
 
 .game-over {
